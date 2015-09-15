@@ -27,8 +27,13 @@ namespace org.ian.zh.fang.project.MoneyCalculation.Models
         [RequiredAttribute]
         public string MFrom { get; set; }
 
+        private int _flag = 1;
         [RequiredAttribute]
-        public int MFlag { get; set; }
+        public int MFlag
+        {
+            get { return _flag; }
+            set { _flag = value; }
+        }
 
         private DateTime mAddTime = DateTime.Now;
         [RequiredAttribute]
