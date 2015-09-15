@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.MCDBContext" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MCDBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.MCDBContext&lt;T&gt;" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MCDBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.MCDBContextConfiguration" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MCDBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.SerializateBase" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAgAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\SerializateBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.EntityQueryHandler&lt;T&gt;" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EntityDataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" Collapsed="true">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\EntityDataHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.CustomerOrderCountTotal" Collapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityQueryHandler&lt;T&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.312" />
+        <Point X="4.125" Y="2.312" />
+        <Point X="4.125" Y="0.812" />
+        <Point X="4.75" Y="0.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CustomerOrderCountTotal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.OrderAmountTotal" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityQueryHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.312" />
+        <Point X="4.125" Y="2.312" />
+        <Point X="4.125" Y="1.839" />
+        <Point X="4.75" Y="1.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderAmountTotal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.CustomerAmountTotal" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityQueryHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.312" />
+        <Point X="4.125" Y="2.312" />
+        <Point X="4.125" Y="2.839" />
+        <Point X="4.75" Y="2.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CustomerAmountTotal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.OrderMaterialTotal" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityQueryHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="2.312" />
+        <Point X="4.125" Y="2.312" />
+        <Point X="4.125" Y="3.839" />
+        <Point X="4.75" Y="3.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderMaterialTotal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.Customer" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="4.812" />
+        <Point X="4.75" Y="4.812" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.Order" Collapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="5.839" />
+        <Point X="4.75" Y="5.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.OrderContent" Collapsed="true">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="6.839" />
+        <Point X="4.75" Y="6.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.OrderType" Collapsed="true">
+    <Position X="4.75" Y="7.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="7.839" />
+        <Point X="4.75" Y="7.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.UnitContent" Collapsed="true">
+    <Position X="4.75" Y="8.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="8.839" />
+        <Point X="4.75" Y="8.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UnitContent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.OrderMaterial" Collapsed="true">
+    <Position X="4.75" Y="9.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="9.839" />
+        <Point X="4.75" Y="9.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EABAAACAQAAAAAgAAAQAAAAAAAAAAAAgQAAAAEAAAAA=</HashCode>
+      <FileName>Models\OrderMaterial.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.MaterialFrom" Collapsed="true">
+    <Position X="4.75" Y="10.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="10.839" />
+        <Point X="4.75" Y="10.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\MaterialFrom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="org.ian.zh.fang.project.MoneyCalculation.Models.MaterialSize" Collapsed="true">
+    <Position X="4.75" Y="11.5" Width="1.5" />
+    <InheritanceLine Type="org.ian.zh.fang.project.MoneyCalculation.Models.EntityDataHandler&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="8.312" />
+        <Point X="4.125" Y="8.312" />
+        <Point X="4.125" Y="11.839" />
+        <Point X="4.75" Y="11.839" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Models\MaterialSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
