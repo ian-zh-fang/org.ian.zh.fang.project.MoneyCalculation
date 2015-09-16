@@ -52,6 +52,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Models\EntityDataHandlerTests.cs" />
+    <Compile Include="Models\EntityQueryHandlerTests.cs" />
     <Compile Include="Models\MaterialFromTests.cs" />
     <Compile Include="Models\MaterialSizeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

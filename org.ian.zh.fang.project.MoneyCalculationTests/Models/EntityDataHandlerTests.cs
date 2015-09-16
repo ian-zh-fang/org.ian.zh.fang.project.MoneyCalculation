@@ -1,10 +1,12 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using org.ian.zh.fang.project.MoneyCalculation.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace org.ian.zh.fang.project.MoneyCalculation.Models.Tests
 {
@@ -37,16 +39,7 @@ namespace org.ian.zh.fang.project.MoneyCalculation.Models.Tests
             AssertAll<OrderMaterial>();
             AssertAll<OrderMaterialTotal>();
             AssertAll<OrderType>();
-            AssertAll<UnitContent>();
-
-            //IEnumerable<MaterialFrom> froms = MaterialFrom.AllAsync().Result;
-            //Assert.IsTrue(froms.Count() >= 0);
-
-            //IEnumerable<MaterialSize> sizes = MaterialSize.AllAsync().Result;
-            //Assert.IsTrue(0 <= sizes.Count());
-
-            //IEnumerable<OrderMaterial> ordermaterials = OrderMaterial.AllAsync().Result;
-            //Assert.IsTrue(0 <= ordermaterials.Count());          
+            AssertAll<UnitContent>();        
         }
 
         private void AssertAll<T>() where T : class, new()
@@ -60,23 +53,14 @@ namespace org.ian.zh.fang.project.MoneyCalculation.Models.Tests
             Assert.IsTrue(0 <= result.Count());
         }
 
-        private MethodInfo GetMethod(Type type, string methodName = "AllAsync")
-        {
-            if (type == null)
-                return null;
-
-            MethodInfo method = type.GetMethod(methodName) ?? GetMethod(type.BaseType);
-            return method;
-        }
-
         [TestMethod()]
         public void AddTest()
         {
             MaterialFrom materialfrom = new MaterialFrom { FDesc = "自运" };
-            Assert.IsTrue(0 < materialfrom.AddAsync().Result.FromId);
+            Assert.IsTrue(0 < materialfrom.InsertAsync().Result.FromId);
 
             MaterialSize msize = new MaterialSize { SDesc = "80X80" };
-            Assert.IsTrue(0 < msize.AddAsync().Result.SizeId);
+            Assert.IsTrue(0 < msize.InsertAsync().Result.SizeId);
 
             OrderMaterial ordermaterial = new OrderMaterial
             {
@@ -86,7 +70,59 @@ namespace org.ian.zh.fang.project.MoneyCalculation.Models.Tests
                 MQuantity = 10,
                 OrderId = 1
             };
-            Assert.IsTrue(0 < ordermaterial.AddAsync().Result.MaterialId);
+            Assert.IsTrue(0 < ordermaterial.InsertAsync().Result.MaterialId);
+        }
+
+        [TestMethod()]
+        public void ModifyAsyncTest()
+        {
+            OrderMaterial material = OrderMaterial.FindAsync(1).Result;
+            material.MQuantity = 100;
+            material.MFlag = 2;
+            OrderMaterial result = material.UpdateAsync().Result;
+            Assert.IsNotNull(result);
+
+            material.MSize = "120X120";
+            material.MQuantity = 200;
+            result = material.UpdateAsync(new Expression<Func<OrderMaterial, object>>[] { t => t.MSize, t => t.MQuantity }).Result;
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod()]
+        public void DeleteAsyncTest()
+        {
+            IEnumerable<MaterialSize> mSizes = MaterialSize.DeleteAsync(t => t.SDesc == "2X2").Result;
+            Assert.IsTrue(0 <= mSizes.Count());
+
+            MaterialSize mSize = MaterialSize.DeleteAsync(1002).Result;
+            Assert.IsNull(mSize);
+
+            mSize = MaterialSize.DeleteAsync(2002).Result;
+            Assert.IsNull(mSize);
+
+
+            DeleteEntity<MaterialSize>(t => t.SDesc.Contains("2X"));
+            DeleteEntity<MaterialSize>(t => t.SDesc.Contains("X100"));
+            DeleteEntity<MaterialSize>(t => t.SDesc.Contains("X120"));
+        }
+
+        private void DeleteEntity<T>(Expression<Func<T, bool>> predicate)
+        {
+            MethodInfo method = GetMethod(typeof(T), "DeleteAsync", typeof(Expression<Func<T, bool>>));
+            Task<IEnumerable<T>> task = method.Invoke(null, new object[] { predicate }) as Task<IEnumerable<T>>;
+            IEnumerable<T> result = task.Result;
+            int count = result.Count();
+            Debug.WriteLine(string.Format("count: {0},  t-sql: {1}", count, predicate.ToString()));
+            Assert.IsTrue(0 <= count);
+        }
+        
+        private MethodInfo GetMethod(Type type, string methodName = "AllAsync", params Type[] paramTypes)
+        {
+            if (type == null)
+                return null;
+
+            MethodInfo method = type.GetMethod(methodName, paramTypes) ?? GetMethod(type.BaseType, methodName, paramTypes);
+            return method;
         }
     }
 }
